@@ -8,17 +8,47 @@ $(document).on('turbolinks:load', function() {
     
     submitBtn.click(function(event) {
         event.preventDefault();
+        submitBtn.val("Processing").prop('disabled', true);
         
         var ccNum = $('#card_number').val();
         var cvcNum = $('#card_code').val();
         var expMonth = $('#card_month').val();
-        var expYear = $('#card_year').val();
+        var expYear = $('#card_year').val
         
-        Stripe.createToken({
-            number: ccNum,
-            cvc: cvcNum,
-            exp_month: expMonth,
-            exp_year: expYear
-        }, stripeReponseHandler);
+        var error = false;
+        
+        if(!Stripe.validateCardNumber(ccNum)) {
+            error = true;
+            alert('The credit card number appears to be invalid');
+        }
+        
+        if(!Stripe.validateCVC(cvcNum)) {
+            error = true;
+            alert('The CVC numver appears to be invalid');
+        }
+        
+        if(!Stripe.validateExpiry(expMonth, expYear)) {
+            error = true;
+            alert('The expiration date appears to be invalid');
+        }
+        
+        if(error) {
+            submitBtn.val("Sign Up").prop('disabled', false);
+        } else {
+            Stripe.createToken({
+                number: ccNum,
+                cvc: cvcNum,
+                exp_month: expMonth,
+                exp_year: expYear
+            }, stripeReponseHandler);
+        }
+        return false;
     });
+    
+    function stripeReponseHandler(status, response) {
+        var token = response.id;
+        
+        theForm.append($('<input type="hidden" name="user[stripe_card_token]">').val(token));
+        theForm.get(0).submit();
+    }
 });
