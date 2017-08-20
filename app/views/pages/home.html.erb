@@ -1,25 +1,27 @@
 <div class="home-callout text-center container-fluid">
-    <h1>Welcome to DevMatch</h1>
-    <h3>A membership site where entrepreneurs can meet developers.</h3>
+  <h1>Welcome to DevMatch</h1>
+  <h3>A membership site where entrepreneurs can meet developers.</h3>
 </div>
 
 <div class="container home-signup-links">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="well">
-                <h2 class="text-center">Basic Membership</h2>
-                <h4>Sign up for free and get basic access to the comunity.</h4>
-                <br>
-                <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" %>
-            </div>
-        </div>
-        
-        <div class="col-md-6">
-            <div class="well">
-                <h2 class="text-center">Pro Membership</h2>
-                <h4>Sign up for the pro account for $10/month and get access to the community and contact information!</h4>
-                <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" %>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Basic Membership</h2>
+        <h4>Sign up for free and get basic access to the comunity.</h4>
+        <br>
+        <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" %>
+      </div>
     </div>
+    
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Pro Membership</h2>
+        <h4>Sign up for the pro account for $10/month and get access to the community and contact information!</h4>
+        <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
+  
+  <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>
 </div>
