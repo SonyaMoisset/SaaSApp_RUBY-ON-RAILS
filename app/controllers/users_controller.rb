@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!
     
     # GET to /users/:id
     def show
