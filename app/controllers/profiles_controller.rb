@@ -2,13 +2,10 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :only_current_user
     
-  # GET to /users/:user_id/profile/new
   def new
-    # Render blank profile details form
     @profile = Profile.new
   end
   
-  # POST to /users/:user_id/profile
   def create
     @user = User.find(params[:user_id])
     @profile = @user.build_profile(profile_params)
@@ -21,13 +18,11 @@ class ProfilesController < ApplicationController
     end
   end
   
-  # GET to /users/:user_id/profile/edit
   def edit
     @user = User.find(params[:user_id])
     @profile = @user.profile
   end
   
-  # PATCH to /users/:user_id/profile
   def update
     @user = User.find(params[:user_id])
     @profile = @user.profile
