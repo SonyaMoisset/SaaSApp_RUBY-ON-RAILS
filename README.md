@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/SonyaMoisset/SaaSApp_RUBY-ON-RAILS?branch=master)](https://bettercodehub.com/)
+
 # DevMatch
 
 Software-as-a-Service Ruby on Rails App
