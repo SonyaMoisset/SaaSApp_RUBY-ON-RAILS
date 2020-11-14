@@ -44,7 +44,7 @@ gem 'devise', '4.7.1'
 gem 'stripe', '5.22.0'
 
 # Use Figaro for ENV variables
-gem 'figaro', '1.1.1'
+gem 'figaro', '1.2.0'
 
 # Use Paperclip for image upload
 gem 'paperclip', '5.2.0'
