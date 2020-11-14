@@ -47,7 +47,7 @@ gem 'stripe', '5.22.0'
 gem 'figaro', '1.2.0'
 
 # Use Paperclip for image upload
-gem 'paperclip', '5.2.0'
+gem 'paperclip', '6.1.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
