@@ -39,6 +39,3 @@ Software-as-a-Service Ruby on Rails App
 ## Pro accounts are linked to Stripe
 ![Profile](https://github.com/SonyaMoisset/saas-app-rails/blob/master/Stripe.png)
 ![Stripe](https://github.com/SonyaMoisset/saas-app-rails/blob/master/Stripe2.png)
-
-## The App is hosted on Heroku
-![Heroku](https://github.com/SonyaMoisset/saas-app-rails/blob/master/heroku.png)
