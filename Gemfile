@@ -38,7 +38,7 @@ gem 'font-awesome-sass', '4.7.0'
 gem 'hirb', '0.7.3'
 
 # Use Devise for user authentication
-gem 'devise', '4.7.2'
+gem 'devise', '4.9.4'
 
 # Use Stripe for payment processing
 gem 'stripe', '5.22.0'
